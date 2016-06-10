@@ -181,9 +181,11 @@ public abstract class LifeForm implements TimeObserver
 	/**
 	 * Drops the weapon the LifeForm has.
 	 */
-	public void dropWeapon()
+	public Weapon dropWeapon()
 	{
+		Weapon temp=weapon;
 		weapon = null;
+		return temp;
 	}
 
 	/**
