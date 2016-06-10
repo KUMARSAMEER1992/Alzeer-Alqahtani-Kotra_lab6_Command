@@ -1,6 +1,7 @@
 package environment;
 
 import lifeform.LifeForm;
+import ui.GameDisplay;
 import weapon.Weapon;
 
 /**
@@ -24,6 +25,11 @@ public class Environment
 	 * Environment to store instance.
 	 */
 	private static Environment theWorld;
+
+	/**
+	 * GameDispaly to hold display nstance.
+	 */
+	private GameDisplay diaplay;
 
 	/**
 	 * Create an instance of Environment which has the given number of rows and
@@ -305,6 +311,17 @@ public class Environment
 			}
 		}
 		return false;
+	}
+
+	// TODO
+	public void setDiaplay(GameDisplay diaplay)
+	{
+		this.diaplay = diaplay;
+	}
+
+	public void informDisplay()
+	{
+		diaplay.update();
 	}
 
 }

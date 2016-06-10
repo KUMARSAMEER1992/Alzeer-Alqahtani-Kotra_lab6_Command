@@ -6,10 +6,7 @@ import java.awt.Component;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -40,7 +37,6 @@ public class GameDisplay
 	private DisplayBean[][] displaydetails;
 	private int rows;
 	private int cols;
-	private JButton btnNewButton;
 
 	/**
 	 * Launch the application.
@@ -205,22 +201,24 @@ public class GameDisplay
 		lblMap.setFont(new Font("Tahoma", Font.BOLD, 15));
 		mapName.add(lblMap);
 
-		btnNewButton = new JButton("check");
-		btnNewButton.addActionListener(new ActionListener()
-		{
-			public void actionPerformed(ActionEvent arg0)
-			{
-				try
-				{
-					testDiaplay();
-				}
-				catch (AttachmentException e)
-				{
-					e.printStackTrace();
-				}
-			}
-		});
-		mapName.add(btnNewButton);
+		/*
+		 * btnNewButton = new JButton("check");
+		 * btnNewButton.addActionListener(new ActionListener()
+		 * {
+		 * public void actionPerformed(ActionEvent arg0)
+		 * {
+		 * try
+		 * {
+		 * testDiaplay();
+		 * }
+		 * catch (AttachmentException e)
+		 * {
+		 * e.printStackTrace();
+		 * }
+		 * }
+		 * });
+		 * mapName.add(btnNewButton);
+		 */
 		mapArea = new JPanel();
 		mapPanel.add(mapArea, BorderLayout.CENTER);
 		mapArea.setLayout(new GridLayout(rows, cols, 0, 0));
