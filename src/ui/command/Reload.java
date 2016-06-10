@@ -1,5 +1,6 @@
 package ui.command;
 
+import environment.Environment;
 import lifeform.LifeForm;
 
 public class Reload implements Command
@@ -12,7 +13,11 @@ public class Reload implements Command
 	@Override
 	public void execute() 
 	{
+		Environment env=Environment.getWorldInstance();
+
 		lifeForm.reload();
+		env.informDisplay();
+
 	}
 
 }

@@ -47,6 +47,7 @@ public class Acquire implements Command
 				env.addWeapon(row, col, temp);
 			}
 		}
-	}
+		env.informDisplay();
+ }
 
 }

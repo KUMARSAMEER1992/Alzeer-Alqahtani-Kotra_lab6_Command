@@ -22,7 +22,11 @@ public class Drop implements Command
 		{
 			Weapon temp=lifeForm.dropWeapon();
 			env.addWeapon(row, col, temp);
+		
 		}
+		env.informDisplay();
+
 	}
+	
 
 }

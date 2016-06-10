@@ -3,10 +3,10 @@ package ui.command;
 import environment.Environment;
 import lifeform.LifeForm;
 
-public class Move implements Command
+public class TurnWest implements Command 
 {
 	LifeForm lifeForm;
-	public Move(LifeForm lifeForm)
+	public TurnWest(LifeForm lifeForm)
 	{
 		this.lifeForm=lifeForm;
 	}
@@ -14,10 +14,12 @@ public class Move implements Command
 	public void execute() 
 	{
 		Environment env=Environment.getWorldInstance();
-		env.move(lifeForm);
+
+		lifeForm.setDirection(3);
 		env.informDisplay();
 
-		
 	}
 
 }
+
+

@@ -38,6 +38,19 @@ public class Attack implements Command
 			}
 			break;
 		case 1:
+			temp=col+1;
+			while(temp<Environment.COLS)
+			{
+				if(env.getLifeForm(row, temp)!=null)
+				{
+					lifeForm.attack(env.getLifeForm(row, temp));
+					break;
+				}
+				else
+				{
+					temp++;
+				}
+			}
 			break;
 		case 2:
 			temp=row+1;
@@ -55,8 +68,22 @@ public class Attack implements Command
 			}
 			break;
 		case 3:
+			temp=col-1;
+			while(temp>=0)
+			{
+				if(env.getLifeForm(row, temp)!=null)
+				{
+					lifeForm.attack(env.getLifeForm(row, temp));
+					break;
+				}
+				else
+				{
+					temp--;
+				}
+			}
 			break;
 		}
+		env.informDisplay();
 	}
 
 }
