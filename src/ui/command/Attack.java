@@ -1,18 +1,35 @@
+/**
+ *  Name:Norah Alqahtani
+ *  Course:CSC 561
+ *  Instructor: Dr. Girard
+ */
 package ui.command;
 
 import environment.Environment;
 import lifeform.LifeForm;
-
+/**
+ * LifeForm attack another LifeForm in the direction it.
+ */
 public class Attack implements Command
 
 {
+	/**
+	 * LifeForm want to attack another LifeForm.
+	 */
 	LifeForm lifeForm;
+	/**
+	 * Create an instance of Attack with given LifeForm.
+	 * @param lifeForm
+	 */
 	public Attack(LifeForm lifeForm)
 	{
-		this.lifeForm=lifeForm;
+	  this.lifeForm=lifeForm;
 
 	}
-
+    /**
+     * A LifeForm will only attack targets in a direct 
+     * line in front of the LifeForm. 
+     */
 	@Override
 	public void execute() 
 	{

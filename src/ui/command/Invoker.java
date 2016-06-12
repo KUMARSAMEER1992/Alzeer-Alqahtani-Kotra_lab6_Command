@@ -20,7 +20,8 @@ public class Invoker extends Frame implements ActionListener
 		createGui();
 	}
 
-	private void createGui() {
+	private void createGui() 
+	{
 		setLayout(new BorderLayout());
 		   
 	     JPanel panal=new JPanel();
@@ -140,7 +141,5 @@ public class Invoker extends Frame implements ActionListener
 	public void setAcquire(Command acquire) 
 	{
 		this.acquire = acquire;
-	}
-	 
-	 
+	}	 
 }

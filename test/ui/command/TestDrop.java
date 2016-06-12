@@ -1,3 +1,8 @@
+/**
+ *  Name:Norah Alqahtani
+ *  Course:CSC 561
+ *  Instructor: Dr. Girard
+ */
 package ui.command;
 
 import static org.junit.Assert.*;
@@ -11,9 +16,11 @@ import weapon.Weapon;
 
 import environment.Environment;
 import environment.TestEnvironment;
-
-public class TestDrop {
-
+/**
+ * The test cases for the Attack class.
+ */
+public class TestDrop 
+{
 	/**
 	 * Test Drop weapon with space available
 	 */

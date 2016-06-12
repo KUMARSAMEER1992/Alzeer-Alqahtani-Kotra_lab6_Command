@@ -1,3 +1,8 @@
+/**
+ *  Name:Norah Alqahtani
+ *  Course:CSC 561
+ *  Instructor: Dr. Girard
+ */
 package ui.command;
 
 import static org.junit.Assert.*;
@@ -7,9 +12,11 @@ import lifeform.LifeForm;
 import org.junit.Test;
 
 import environment.Environment;
-
-public class TestTurnEast {
-
+/**
+ * The test cases for the TurnEast class.
+ */
+public class TestTurnEast 
+{
 	/**
 	 * Test changes selected player's direction to east
 	 */
@@ -20,8 +27,6 @@ public class TestTurnEast {
 		Environment env= Environment.getWorldInstance();
 		Command turnEast=new TurnEast(entity1);
 		turnEast.execute();
-		assertEquals(1,entity1.getDirection());
-			
+		assertEquals(1,entity1.getDirection());		
 	}
-
 }
