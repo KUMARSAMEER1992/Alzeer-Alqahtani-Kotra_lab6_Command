@@ -12,7 +12,7 @@ import javax.swing.JPanel;
 public class Invoker extends Frame implements ActionListener 
 {
 	private Button btnNorth, btnSouth, btnEast, btnWest,btnMove,btnReload,btnAttack,btnAcquire,btnDrop;
-	Command  turnNorth,turnSouth,turnEast,turnWest;
+	Command turnNorth,turnSouth,turnEast,turnWest;
 	Command move,reload,attack,drop,acquire;
 	
 	public Invoker()
@@ -25,34 +25,42 @@ public class Invoker extends Frame implements ActionListener
 		   
 	     JPanel panal=new JPanel();
 	     panal.setLayout(new BorderLayout(3,3));
-	      btnNorth = new Button("NORTH");
-	      panal.add(btnNorth, BorderLayout.NORTH);
-	      btnSouth = new Button("SOUTH");
-	      panal.add(btnSouth, BorderLayout.CENTER);
-	      btnEast = new Button("EAST");
-	      panal.add(btnEast, BorderLayout.EAST);
-	      btnWest = new Button("WEST");
-	      panal.add(btnWest, BorderLayout.WEST);
-	      add("North",panal);
-	 //comand
-	      JPanel panal1=new JPanel();
-		  panal1.setLayout(new GridLayout(3,3));
-	      btnMove=new Button("Move");
-	      
-	      panal1.add(btnMove, BorderLayout.WEST);
-	      btnReload=new Button("Reload");
-	      panal1.add(btnReload, BorderLayout.NORTH);
-	      btnAttack=new Button("Attack");
-	      panal1.add(btnAttack, BorderLayout.CENTER);
-	      btnAcquire=new Button("Acquire");
-	      panal1.add(btnAcquire, BorderLayout.EAST);
-	      btnDrop=	new Button("Drop");  
-	      panal1.add(btnDrop, BorderLayout.EAST);
-	      add("Center",panal1);
-	      setTitle("Remote"); 
-	      setSize(280, 150);            
-	      pack();
-	      setVisible(true);
+	     btnNorth = new Button("NORTH");
+	     btnNorth.addActionListener(this);
+	     panal.add(btnNorth, BorderLayout.NORTH);
+	     btnSouth = new Button("SOUTH");
+	     btnSouth.addActionListener(this);
+	     panal.add(btnSouth, BorderLayout.CENTER);
+	     btnEast = new Button("EAST");
+	     btnEast.addActionListener(this);
+	     panal.add(btnEast, BorderLayout.EAST);
+	     btnWest = new Button("WEST");
+	     btnWest.addActionListener(this);
+	     panal.add(btnWest, BorderLayout.WEST);
+	     add("North",panal);
+	     //comand
+	     JPanel panal1=new JPanel();
+		 panal1.setLayout(new GridLayout(3,3));
+	     btnMove=new Button("Move");
+	     btnMove.addActionListener(this);
+	     panal1.add(btnMove, BorderLayout.WEST);
+	     btnReload=new Button("Reload");
+	     btnReload.addActionListener(this);
+	     panal1.add(btnReload, BorderLayout.NORTH);
+	     btnAttack=new Button("Attack");
+	     btnAttack.addActionListener(this);
+	     panal1.add(btnAttack, BorderLayout.CENTER);
+	     btnAcquire=new Button("Acquire");
+	     btnAcquire.addActionListener(this);
+	     panal1.add(btnAcquire, BorderLayout.EAST);
+	     btnDrop=new Button("Drop"); 
+	     btnDrop.addActionListener(this);
+	     panal1.add(btnDrop, BorderLayout.EAST);
+	     add("Center",panal1);
+	     setTitle("Remote"); 
+	     setSize(280, 150);            
+	     pack();
+	     setVisible(true);
 	}
 	
 	 @Override

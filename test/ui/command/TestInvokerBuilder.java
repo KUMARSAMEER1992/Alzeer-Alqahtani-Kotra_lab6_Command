@@ -23,6 +23,10 @@ public class TestInvokerBuilder
 		LifeForm entity1=new Human("bob",40,10);
 		env.addLifeForm(0, 0, entity1);
 		Invoker in=InvokerBuilder.bulidInvoker(entity1);
+		
+		//test buttons function correctly
+		
 	}
+	
 
 }
