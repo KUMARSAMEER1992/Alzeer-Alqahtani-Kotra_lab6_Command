@@ -18,7 +18,7 @@ public class TestInvokerBuilder
 	{
 		GameDisplay display=new GameDisplay();
 		Environment env=Environment.getWorldInstance();
-		env.setDiaplay(display);
+		env.setDisplay(display);
 		
 		LifeForm entity1=new Human("bob",40,10);
 		env.addLifeForm(0, 0, entity1);
