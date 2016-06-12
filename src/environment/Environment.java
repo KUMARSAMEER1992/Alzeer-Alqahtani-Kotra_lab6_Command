@@ -29,7 +29,7 @@ public class Environment
 	/**
 	 * GameDispaly to hold display nstance.
 	 */
-	private GameDisplay diaplay;
+	private GameDisplay display;
 
 	/**
 	 * Create an instance of Environment which has the given number of rows and
@@ -314,14 +314,15 @@ public class Environment
 	}
 
 	// TODO
-	public void setDiaplay(GameDisplay diaplay)
+	public void setDisplay(GameDisplay display)
 	{
-		this.diaplay = diaplay;
+		this.display = display;
 	}
 
 	public void informDisplay()
 	{
-		diaplay.update();
+		if (display != null)
+			display.update();
 	}
 
 }

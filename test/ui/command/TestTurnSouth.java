@@ -1,3 +1,8 @@
+/**
+ *  Name:Norah Alqahtani
+ *  Course:CSC 561
+ *  Instructor: Dr. Girard
+ */
 package ui.command;
 
 import static org.junit.Assert.*;
@@ -7,12 +12,13 @@ import lifeform.LifeForm;
 import org.junit.Test;
 
 import environment.Environment;
-
+/**
+ * The test cases for the TurnSouth class.
+ */
 public class TestTurnSouth 
 {
-
 	/**
-	 * Test changes selected player's dieriction to south
+	 * Test changes selected player's direction to South
 	 */
 		@Test
 		public void test() 

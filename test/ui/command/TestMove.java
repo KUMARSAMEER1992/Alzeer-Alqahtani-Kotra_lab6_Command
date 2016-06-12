@@ -1,3 +1,8 @@
+/**
+ *  Name:Norah Alqahtani
+ *  Course:CSC 561
+ *  Instructor: Dr. Girard
+ */
 package ui.command;
 
 import static org.junit.Assert.*;
@@ -10,9 +15,9 @@ import environment.Environment;
 
 public class TestMove 
 {
-/**
- * Test move selected player
- */
+	/**
+	 * Test move selected player
+	 */
 	@Test
 	public void test() 
 	{
