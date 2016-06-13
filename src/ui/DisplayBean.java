@@ -3,10 +3,15 @@ package ui;
 import javax.swing.JLabel;
 
 /**
+ * This class contains constants to be displayed and the Jlabel for contents of
+ * the Cell in Environment.
  * @author Sameer Kumar Kotra
  */
 public class DisplayBean
 {
+	/**
+	 * Constants to be displayed on the Map.
+	 */
 	public final static String EMPTY = "  ";
 	public final static String HUMANSTRING = "H";
 	public final static String ALIENSTRING = "A";
@@ -17,21 +22,32 @@ public class DisplayBean
 	public final static String EAST = "E";
 	public final static String WEST = "W";
 	public final static String SOUTH = "S";
+	/**
+	 * JLabel to display lifeForm.
+	 */
 	private JLabel lifeForm;
+	/**
+	 * JLabel to display direction of LifeForm.
+	 */
 	private JLabel direction;
+	/**
+	 * JLabel to display the weapon in the cell.
+	 */
 	private JLabel weapon1;
+	/**
+	 * JLabel to display the weapon in the cell.
+	 */
 	private JLabel weapon2;
+	/**
+	 * JLabel to display the weapon LifeForm holding.
+	 */
 	private JLabel lifeFormWeapon;
 
+	/**
+	 * Constructs the DisaplayBean with default value.
+	 */
 	DisplayBean()
 	{
-		/*
-		 * lifeForm = new JLabel("H");
-		 * direction = new JLabel("N");
-		 * weapon1 = new JLabel("PI");
-		 * weapon2 = new JLabel("PL");
-		 * lifeFormWeapon = new JLabel("CH");
-		 */
 		lifeForm = new JLabel(EMPTY);
 		direction = new JLabel(EMPTY);
 		weapon1 = new JLabel(EMPTY);
@@ -39,54 +55,43 @@ public class DisplayBean
 		lifeFormWeapon = new JLabel(EMPTY);
 	}
 
+	/**
+	 * @return the LifeForm label.
+	 */
 	public JLabel getLifeForm()
 	{
 		return lifeForm;
 	}
 
-	public void setLifeForm(JLabel lifeForm)
-	{
-		this.lifeForm = lifeForm;
-	}
-
+	/**
+	 * @return the direction label.
+	 */
 	public JLabel getDirection()
 	{
 		return direction;
 	}
 
-	public void setDirection(JLabel direction)
-	{
-		this.direction = direction;
-	}
-
+	/**
+	 * @return the weapon label.
+	 */
 	public JLabel getWeapon1()
 	{
 		return weapon1;
 	}
 
-	public void setWeapon1(JLabel weapon1)
-	{
-		this.weapon1 = weapon1;
-	}
-
+	/**
+	 * @return the weapon label.
+	 */
 	public JLabel getWeapon2()
 	{
 		return weapon2;
 	}
 
-	public void setWeapon2(JLabel weapon2)
-	{
-		this.weapon2 = weapon2;
-	}
-
+	/**
+	 * @return the lifeFormWeapon label.
+	 */
 	public JLabel getLifeFormWeapon()
 	{
 		return lifeFormWeapon;
 	}
-
-	public void setLifeFormWeapon(JLabel lifeFormWeapon)
-	{
-		this.lifeFormWeapon = lifeFormWeapon;
-	}
-
 }
