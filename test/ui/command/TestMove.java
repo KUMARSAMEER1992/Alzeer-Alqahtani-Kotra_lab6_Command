@@ -5,29 +5,31 @@
  */
 package ui.command;
 
-import static org.junit.Assert.*;
-import lifeform.Human;
-import lifeform.LifeForm;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
 import environment.Environment;
+import environment.TestEnvironment;
+import lifeform.Human;
+import lifeform.LifeForm;
 
-public class TestMove 
+public class TestMove
 {
 	/**
 	 * Test move selected player
 	 */
 	@Test
-	public void test() 
+	public void test()
 	{
-		LifeForm entity1= new Human("Bob",40,5);
-		Environment env= Environment.getWorldInstance();
-		
+		LifeForm entity1 = new Human("Bob", 40, 5);
+		Environment env = Environment.getWorldInstance();
+
 		env.addLifeForm(6, 6, entity1);
-		Command move= new Move(entity1);
+		Command move = new Move(entity1);
 		move.execute();
-		assertEquals(entity1,env.getLifeForm(3, 6));
+		assertEquals(entity1, env.getLifeForm(3, 6));
+		TestEnvironment.resetEnvironment();
 	}
 
 }

@@ -5,29 +5,31 @@
  */
 package ui.command;
 
-import static org.junit.Assert.*;
-import lifeform.Human;
-import lifeform.LifeForm;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+import environment.TestEnvironment;
+import lifeform.Human;
+import lifeform.LifeForm;
 import weapon.Pistol;
 import weapon.Weapon;
+
 /**
  * The test cases for the Reload class.
  */
-public class TestReload 
+public class TestReload
 {
 	/**
 	 * Test empties then reloads a player's weapon
 	 */
 	@Test
-	public void testReload() 
+	public void testReload()
 	{
-		LifeForm entity1= new Human("Bob",40,5);
-		Weapon weapon= new Pistol();
+		LifeForm entity1 = new Human("Bob", 40, 5);
+		Weapon weapon = new Pistol();
 		entity1.pickUp(weapon);
-		Command reload= new Reload(entity1);
+		Command reload = new Reload(entity1);
 		weapon.fire(10);
 		weapon.fire(10);
 		weapon.fire(10);
@@ -40,11 +42,11 @@ public class TestReload
 		weapon.fire(10);
 		weapon.fire(10);
 		// empty
-		assertEquals(0,weapon.getActualAmmo());
-		//reload
+		assertEquals(0, weapon.getActualAmmo());
+		// reload
 		reload.execute();
-		assertEquals(10,weapon.getActualAmmo());
-			
+		assertEquals(10, weapon.getActualAmmo());
+		TestEnvironment.resetEnvironment();
 	}
-	
+
 }

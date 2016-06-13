@@ -45,6 +45,7 @@ public class TestEnvironment
 		// Can not move to 2,5 as LifeForm is there so moves to 3,5.
 		assertEquals(lifeForm, environment.getLifeForm(3, 5));
 		assertNull(environment.getLifeForm(5, 5));
+		reset();
 	}
 
 	/**
@@ -72,6 +73,7 @@ public class TestEnvironment
 		// Can not move to 8,5 as LifeForm is there so moves to 7,5.
 		assertEquals(lifeForm, environment.getLifeForm(7, 5));
 		assertNull(environment.getLifeForm(5, 5));
+		reset();
 	}
 
 	/**
@@ -99,6 +101,7 @@ public class TestEnvironment
 		// Can not move to 2,6 as LifeForm is there so moves to 2,5.
 		assertEquals(lifeForm, environment.getLifeForm(2, 5));
 		assertNull(environment.getLifeForm(2, 4));
+		reset();
 	}
 
 	/**
@@ -126,6 +129,7 @@ public class TestEnvironment
 		// Can not move to 2,2 as LifeForm is there so moves to 2,3.
 		assertEquals(lifeForm, environment.getLifeForm(2, 3));
 		assertNull(environment.getLifeForm(2, 4));
+		reset();
 	}
 
 	/**
@@ -186,6 +190,7 @@ public class TestEnvironment
 		assertNull(environment.removeWeapon(12, 1, 1));
 		assertNull(environment.removeWeapon(1, 12, 1));
 		assertNull(environment.removeWeapon(12, 12, 1));
+		reset();
 	}
 
 	/**
@@ -213,6 +218,7 @@ public class TestEnvironment
 		environment.removeLifeForm(0, 2);
 		assertEquals(-1, environment.getDistance(lifeForm1, lifeForm2));
 		assertEquals(-1, environment.getDistance(lifeForm2, lifeForm3));
+		reset();
 	}
 
 	/**
@@ -242,6 +248,7 @@ public class TestEnvironment
 
 		// The cell location is invalid we should get null
 		assertNull(environment.getLifeForm(12, 15));
+		reset();
 	}
 
 	/**
@@ -260,7 +267,7 @@ public class TestEnvironment
 		// Can not add at location 0,12 as column exceed size
 		success = environment.addLifeForm(0, 12, bob);
 		assertFalse(success);
-
+		reset();
 	}
 
 	/**

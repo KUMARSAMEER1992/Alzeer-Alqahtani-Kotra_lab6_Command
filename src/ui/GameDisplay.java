@@ -13,7 +13,6 @@ import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
 import environment.Environment;
-import exceptions.AttachmentException;
 import lifeform.Alien;
 import lifeform.Human;
 import lifeform.LifeForm;
@@ -21,34 +20,51 @@ import weapon.Attachment;
 import weapon.ChainGun;
 import weapon.Pistol;
 import weapon.PlasmaCannon;
-import weapon.Scope;
 import weapon.Weapon;
 
 /**
+ * This class Displays the Environment.
  * @author Sameer Kumar Kotra
  */
 public class GameDisplay
 {
 
+	/**
+	 * JFrame to display main content.
+	 */
 	private JFrame frame;
+	/**
+	 * JFrame to display legend panel.
+	 */
 	private JPanel legendPanel;
+	/**
+	 * JFrame to display Map Content.
+	 */
 	private JPanel mapPanel;
+	/**
+	 * JFrame to display the Cells in Environment.
+	 */
 	private JPanel mapArea;
+	/**
+	 * DisplayBean to store Display details of each Cell.
+	 */
 	private DisplayBean[][] displaydetails;
+	/**
+	 * int to store the number of rows displayed in the Map.
+	 */
 	private int rows;
+	/**
+	 * int to store the number of columns displayed in the Map.
+	 */
 	private int cols;
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args)
 	{
 		GameDisplay window = new GameDisplay();
-		window.frame.setVisible(true);
 	}
 
 	/**
-	 * Create the application.
+	 * Creates the Content of the panels.
 	 */
 	public GameDisplay()
 	{
@@ -64,10 +80,11 @@ public class GameDisplay
 		}
 		initialize();
 		update();
+		frame.setVisible(true);
 	}
 
 	/**
-	 * 
+	 * Updates the display according to changes in the Environment.
 	 */
 	public void update()
 	{
@@ -146,8 +163,9 @@ public class GameDisplay
 	}
 
 	/**
-	 * @param tempWeapon
-	 * @return
+	 * Returns the Weapon removing the Attachment.
+	 * @param tempWeapon : Weapon to remove Attachment.
+	 * @return the Weapon with out Attachment.
 	 */
 	private String getWeaponStirng(Weapon tempWeapon)
 	{
@@ -187,7 +205,7 @@ public class GameDisplay
 	}
 
 	/**
-	 * 
+	 * Builds the content of the Map Panel.
 	 */
 	private void buildMapPanel()
 	{
@@ -200,25 +218,6 @@ public class GameDisplay
 		JLabel lblMap = new JLabel("Map");
 		lblMap.setFont(new Font("Tahoma", Font.BOLD, 15));
 		mapName.add(lblMap);
-
-		/*
-		 * btnNewButton = new JButton("check");
-		 * btnNewButton.addActionListener(new ActionListener()
-		 * {
-		 * public void actionPerformed(ActionEvent arg0)
-		 * {
-		 * try
-		 * {
-		 * testDiaplay();
-		 * }
-		 * catch (AttachmentException e)
-		 * {
-		 * e.printStackTrace();
-		 * }
-		 * }
-		 * });
-		 * mapName.add(btnNewButton);
-		 */
 		mapArea = new JPanel();
 		mapPanel.add(mapArea, BorderLayout.CENTER);
 		mapArea.setLayout(new GridLayout(rows, cols, 0, 0));
@@ -233,49 +232,13 @@ public class GameDisplay
 
 	}
 
-	// TODO remove test method.
-	private void testDiaplay() throws AttachmentException
-	{
-		Environment environment = Environment.getWorldInstance();
-		LifeForm lifeForm = new Human("Bob", 50, 10);
-		// Setting to South.
-		lifeForm.setDirection(2);
-		LifeForm lifeForm1 = new Human("Bob", 50, 10);
-
-		// with out Obstacle.
-		environment.addLifeForm(2, 5, lifeForm);
-		environment.addLifeForm(8, 5, lifeForm1);
-
-		lifeForm = new Alien("Bob", 50);
-		// Setting to West.
-		lifeForm.setDirection(3);
-		lifeForm1 = new Alien("Bob", 50);
-
-		// with out Obstacle.
-		environment.addLifeForm(2, 6, lifeForm);
-		environment.addLifeForm(2, 2, lifeForm1);
-
-		Weapon weapon1 = new Pistol();
-		Weapon weapon2 = new ChainGun();
-		Weapon weapon3 = new PlasmaCannon();
-		environment.addWeapon(1, 1, weapon1);
-		environment.addWeapon(1, 1, weapon2);
-		environment.addWeapon(8, 8, weapon3);
-
-		Scope scope = new Scope(weapon2);
-		Scope scope2 = new Scope(weapon2);
-
-		environment.addWeapon(8, 9, scope);
-		environment.addWeapon(9, 9, scope);
-		update();
-	}
-
 	/**
-	 * @param i
-	 * @param j
-	 * @return
+	 * Creates a panel for each cell in the Environment.
+	 * @param row : Row to which panel to be added
+	 * @param col : Column to which panel to be added.
+	 * @return the JPanle created.
 	 */
-	private JPanel createCellPanel(int i, int j)
+	private JPanel createCellPanel(int row, int col)
 	{
 		FlowLayout flowLayout = new FlowLayout();
 		flowLayout.setHgap(1);
@@ -287,33 +250,33 @@ public class GameDisplay
 
 		JPanel temp = new JPanel(flowLayout);
 		temp.setBorder(new LineBorder(new Color(0, 0, 0)));
-		temp.add(displaydetails[i][j].getLifeForm());
+		temp.add(displaydetails[row][col].getLifeForm());
 		panel.add(temp, BorderLayout.CENTER);
 
 		temp = new JPanel(flowLayout);
 		temp.setBorder(new LineBorder(new Color(0, 0, 0)));
-		temp.add(displaydetails[i][j].getDirection());
+		temp.add(displaydetails[row][col].getDirection());
 		panel.add(temp, BorderLayout.NORTH);
 
 		temp = new JPanel(flowLayout);
 		temp.setBorder(new LineBorder(new Color(0, 0, 0)));
-		temp.add(displaydetails[i][j].getWeapon1());
+		temp.add(displaydetails[row][col].getWeapon1());
 		panel.add(temp, BorderLayout.EAST);
 
 		temp = new JPanel(flowLayout);
 		temp.setBorder(new LineBorder(new Color(0, 0, 0)));
-		temp.add(displaydetails[i][j].getWeapon2());
+		temp.add(displaydetails[row][col].getWeapon2());
 		panel.add(temp, BorderLayout.WEST);
 
 		temp = new JPanel(flowLayout);
 		temp.setBorder(new LineBorder(new Color(0, 0, 0)));
-		temp.add(displaydetails[i][j].getLifeFormWeapon());
+		temp.add(displaydetails[row][col].getLifeFormWeapon());
 		panel.add(temp, BorderLayout.SOUTH);
 		return panel;
 	}
 
 	/**
-	 * 
+	 * Builds the legend panel content.
 	 */
 	private void buildLegendPanel()
 	{

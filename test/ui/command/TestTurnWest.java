@@ -5,29 +5,32 @@
  */
 package ui.command;
 
-import static org.junit.Assert.*;
-import lifeform.Human;
-import lifeform.LifeForm;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
 import environment.Environment;
+import environment.TestEnvironment;
+import lifeform.Human;
+import lifeform.LifeForm;
+
 /**
  * The test cases for the TurnWest class.
  */
-public class TestTurnWest 
+public class TestTurnWest
 {
 	/**
 	 * Test changes selected player's direction to West
 	 */
 	@Test
-	public void test() 
+	public void test()
 	{
-		LifeForm entity1= new Human("Bob",40,5);
-		Environment env= Environment.getWorldInstance();
-		Command turnWest=new TurnWest(entity1);
+		LifeForm entity1 = new Human("Bob", 40, 5);
+		Environment env = Environment.getWorldInstance();
+		Command turnWest = new TurnWest(entity1);
 		turnWest.execute();
-		assertEquals(3,entity1.getDirection());
+		assertEquals(3, entity1.getDirection());
+		TestEnvironment.resetEnvironment();
 	}
 
 }

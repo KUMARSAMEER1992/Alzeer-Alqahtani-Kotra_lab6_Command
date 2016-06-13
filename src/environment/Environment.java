@@ -17,8 +17,14 @@ public class Environment
 	 */
 	private Cell cells[][];
 
-	// TODO
+	/**
+	 * final int to store no of rows of the environment.
+	 */
 	public final static int ROWS = 10;
+
+	/**
+	 * final int to store no of columns of the environment.
+	 */
 	public final static int COLS = 10;
 
 	/**
@@ -27,7 +33,7 @@ public class Environment
 	private static Environment theWorld;
 
 	/**
-	 * GameDispaly to hold display nstance.
+	 * GameDispaly to hold display instance.
 	 */
 	private GameDisplay display;
 
@@ -282,11 +288,11 @@ public class Environment
 	}
 
 	/**
-	 * TODO
-	 * @param xOld
-	 * @param yOld
-	 * @param xNew
-	 * @param yNew
+	 * Moves the LifeForm from old location to new location in the Environment.
+	 * @param xOld : Old row of the LifeForm
+	 * @param yOld : Old column of the LifeForm
+	 * @param xNew : New row of the LifeForm
+	 * @param yNew : New column of the LifeForm
 	 */
 	private void swapLocation(int xOld, int yOld, int xNew, int yNew)
 	{
@@ -295,14 +301,13 @@ public class Environment
 	}
 
 	/**
-	 * TODO
-	 * @param x
-	 * @param y
-	 * @return
+	 * Checks the validity of the coordinates .
+	 * @param x : Row to be checked.
+	 * @param y : Column to be checked.
+	 * @return true if LifeForm can be moved else returns false.
 	 */
 	private boolean checkCordinates(int x, int y)
 	{
-		// if (row < cells.length && col < cells[row].length)
 		if (x >= 0 && x < ROWS && y >= 0 && y < COLS)
 		{
 			if (cells[x][y].getLifeForm() == null)
@@ -313,12 +318,18 @@ public class Environment
 		return false;
 	}
 
-	// TODO
+	/**
+	 * Sets the Display object to Environment.
+	 * @param display : Display to be added.
+	 */
 	public void setDisplay(GameDisplay display)
 	{
 		this.display = display;
 	}
 
+	/**
+	 * Updates display about that Environment has changed.
+	 */
 	public void informDisplay()
 	{
 		if (display != null)
