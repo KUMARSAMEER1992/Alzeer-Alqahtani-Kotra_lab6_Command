@@ -7,11 +7,12 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
 import javax.swing.JPanel;
 
 public class Invoker extends Frame implements ActionListener 
 {
-	private Button btnNorth, btnSouth, btnEast, btnWest,btnMove,btnReload,btnAttack,btnAcquire,btnDrop;
+	protected JButton btnNorth, btnSouth, btnEast, btnWest,btnMove,btnReload,btnAttack,btnAcquire,btnDrop;
 	Command turnNorth,turnSouth,turnEast,turnWest;
 	Command move,reload,attack,drop,acquire;
 	
@@ -26,35 +27,35 @@ public class Invoker extends Frame implements ActionListener
 		 
 	     JPanel panal=new JPanel();
 	     panal.setLayout(new BorderLayout(3,3));
-	     btnNorth = new Button("NORTH");
+	     btnNorth = new JButton("NORTH");
 	     btnNorth.addActionListener(this);
 	     panal.add(btnNorth, BorderLayout.NORTH);
-	     btnSouth = new Button("SOUTH");
+	     btnSouth = new JButton("SOUTH");
 	     btnSouth.addActionListener(this);
 	     panal.add(btnSouth, BorderLayout.CENTER);
-	     btnEast = new Button("EAST");
+	     btnEast = new JButton("EAST");
 	     btnEast.addActionListener(this);
 	     panal.add(btnEast, BorderLayout.EAST);
-	     btnWest = new Button("WEST");
+	     btnWest = new JButton("WEST");
 	     btnWest.addActionListener(this);
 	     panal.add(btnWest, BorderLayout.WEST);
 	     add("North",panal);
 	     //comand
 	     JPanel panal1=new JPanel();
 		 panal1.setLayout(new GridLayout(3,3));
-	     btnMove=new Button("Move");
+	     btnMove=new JButton("Move");
 	     btnMove.addActionListener(this);
 	     panal1.add(btnMove, BorderLayout.WEST);
-	     btnReload=new Button("Reload");
+	     btnReload=new JButton("Reload");
 	     btnReload.addActionListener(this);
 	     panal1.add(btnReload, BorderLayout.NORTH);
-	     btnAttack=new Button("Attack");
+	     btnAttack=new JButton("Attack");
 	     btnAttack.addActionListener(this);
 	     panal1.add(btnAttack, BorderLayout.CENTER);
-	     btnAcquire=new Button("Acquire");
+	     btnAcquire=new JButton("Acquire");
 	     btnAcquire.addActionListener(this);
 	     panal1.add(btnAcquire, BorderLayout.EAST);
-	     btnDrop=new Button("Drop"); 
+	     btnDrop=new JButton("Drop"); 
 	     btnDrop.addActionListener(this);
 	     panal1.add(btnDrop, BorderLayout.EAST);
 	     add("Center",panal1);
