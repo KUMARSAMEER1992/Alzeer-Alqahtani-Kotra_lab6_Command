@@ -21,7 +21,7 @@ import lifeform.LifeForm;
 public class TestInvokerBuilder extends TestCase
 {
 	/**
-	 *test Attaches correct command to each button
+	 *test attache correct command to each button/receiver
 	 */
 	public void test() 
 	{  

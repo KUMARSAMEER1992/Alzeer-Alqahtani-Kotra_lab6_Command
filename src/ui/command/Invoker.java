@@ -29,12 +29,12 @@ public class Invoker extends Frame implements ActionListener
 		createGui();
 	}
 	/**
-	 * Adding buttons and commands to GUI
+	 * Create/Adding buttons and commands to GUI
 	 */
 	private void createGui() 
 	{
 		setLayout(new BorderLayout());
-		//buttons
+		//turns
 	    JPanel panal=new JPanel();
 	    panal.setLayout(new BorderLayout(3,3));
 	    btnNorth = new JButton("NORTH");

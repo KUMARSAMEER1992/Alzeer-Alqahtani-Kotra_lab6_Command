@@ -11,7 +11,7 @@ import lifeform.LifeForm;
 public class InvokerBuilder 
 {
 	/**
-	 * Attach command to each buttons
+	 * Create invoker
 	 * @param lifeForm
 	 * @return Invoker
 	 */
