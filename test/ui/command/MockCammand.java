@@ -6,7 +6,7 @@
 package ui.command;
 import lifeform.LifeForm;
 /**
- * MockCammand to test command
+ * MockCommand to test command
  */
 public class MockCammand implements Command 
 {
