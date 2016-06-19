@@ -1,5 +1,9 @@
+/**
+ *  Name:Dalal Alzeer
+ *  Course:CSC 561
+ *  Instructor: Dr. Girard
+ */
 package ui.command;
-
 import org.junit.Test;
 
 import environment.Environment;
@@ -11,19 +15,19 @@ import junit.framework.TestCase;
 import lifeform.Human;
 import lifeform.LifeForm;
 
-
+/**
+ * test cases for InvokerBuilder class
+ */
 public class TestInvokerBuilder extends TestCase
 {
-	
+	/**
+	 *test attache correct command to each button/receiver
+	 */
 	public void test() 
 	{  
-
 		LifeForm entity1 = new Human("bob", 40, 10);
-
-		// test buttons function correctly
 		TestEnvironment.resetEnvironment();
 		Invoker in=InvokerBuilder.bulidInvoker(entity1);
-		//test buttons function correctly
 		assertTrue(in.turnNorth instanceof TurnNorth);
 		assertTrue(in.turnSouth instanceof TurnSouth);
 		assertTrue(in.turnEast instanceof TurnEast);
@@ -33,7 +37,6 @@ public class TestInvokerBuilder extends TestCase
 		assertTrue(in.attack instanceof Attack);
 		assertTrue(in.drop instanceof Drop);
 		assertTrue(in.acquire instanceof Acquire);
-		
 		
 	}
 
