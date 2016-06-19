@@ -24,7 +24,6 @@ public class TestMove
 	{
 		LifeForm entity1 = new Human("Bob", 40, 5);
 		Environment env = Environment.getWorldInstance();
-
 		env.addLifeForm(6, 6, entity1);
 		Command move = new Move(entity1);
 		move.execute();

@@ -13,6 +13,7 @@ import environment.Environment;
 import environment.TestEnvironment;
 import lifeform.Human;
 import lifeform.LifeForm;
+import lifeform.MockLifeForm;
 
 /**
  * The test cases for the TurnNorth class.
@@ -25,13 +26,13 @@ public class TesTurnNorth
 	@Test
 	public void test()
 	{
-		LifeForm entity1 = new Human("Bob", 40, 5);
+		LifeForm entity = new MockLifeForm("Bob", 40, 10);
 		Environment env = Environment.getWorldInstance();
-		Command turnNorth = new TurnNorth(entity1);
+		Command turnNorth = new TurnNorth(entity);
 		// LifeForm turn to south
-		entity1.setDirection(2);
+		entity.setDirection(2);
 		turnNorth.execute();
-		assertEquals(0, entity1.getDirection());
+		assertEquals(0, entity.getDirection());
 		TestEnvironment.resetEnvironment();
 	}
 }
